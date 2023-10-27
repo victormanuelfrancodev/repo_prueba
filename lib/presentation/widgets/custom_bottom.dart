@@ -24,7 +24,7 @@ class CustomBottom extends StatelessWidget {
                 ),
               );
             },
-            data: (_) {
+            data: () {
               context.pop();
               context.pushNamed("four");
             });
@@ -34,7 +34,7 @@ class CustomBottom extends StatelessWidget {
           backgroundColor: MaterialStateProperty.all(Colors.red),
         ),
         onPressed: () {
-          context.read<MockBloc>().add(MockEvent.getData(id));
+          context.read<MockBloc>().add(MockEvent.getData());
         },
         child: Text(text),
       ),

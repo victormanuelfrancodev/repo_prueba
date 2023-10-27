@@ -16,20 +16,19 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$MockEvent {
-  int get id => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int id) getData,
+    required TResult Function() getData,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(int id)? getData,
+    TResult? Function()? getData,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int id)? getData,
+    TResult Function()? getData,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -49,18 +48,12 @@ mixin _$MockEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  $MockEventCopyWith<MockEvent> get copyWith =>
-      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $MockEventCopyWith<$Res> {
   factory $MockEventCopyWith(MockEvent value, $Res Function(MockEvent) then) =
       _$MockEventCopyWithImpl<$Res, MockEvent>;
-  @useResult
-  $Res call({int id});
 }
 
 /// @nodoc
@@ -72,30 +65,13 @@ class _$MockEventCopyWithImpl<$Res, $Val extends MockEvent>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int,
-    ) as $Val);
-  }
 }
 
 /// @nodoc
-abstract class _$$MockEventGetDataImplCopyWith<$Res>
-    implements $MockEventCopyWith<$Res> {
+abstract class _$$MockEventGetDataImplCopyWith<$Res> {
   factory _$$MockEventGetDataImplCopyWith(_$MockEventGetDataImpl value,
           $Res Function(_$MockEventGetDataImpl) then) =
       __$$MockEventGetDataImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({int id});
 }
 
 /// @nodoc
@@ -105,76 +81,51 @@ class __$$MockEventGetDataImplCopyWithImpl<$Res>
   __$$MockEventGetDataImplCopyWithImpl(_$MockEventGetDataImpl _value,
       $Res Function(_$MockEventGetDataImpl) _then)
       : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-  }) {
-    return _then(_$MockEventGetDataImpl(
-      null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int,
-    ));
-  }
 }
 
 /// @nodoc
 
 class _$MockEventGetDataImpl implements MockEventGetData {
-  _$MockEventGetDataImpl(this.id);
-
-  @override
-  final int id;
+  _$MockEventGetDataImpl();
 
   @override
   String toString() {
-    return 'MockEvent.getData(id: $id)';
+    return 'MockEvent.getData()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$MockEventGetDataImpl &&
-            (identical(other.id, id) || other.id == id));
+        (other.runtimeType == runtimeType && other is _$MockEventGetDataImpl);
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, id);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$MockEventGetDataImplCopyWith<_$MockEventGetDataImpl> get copyWith =>
-      __$$MockEventGetDataImplCopyWithImpl<_$MockEventGetDataImpl>(
-          this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int id) getData,
+    required TResult Function() getData,
   }) {
-    return getData(id);
+    return getData();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(int id)? getData,
+    TResult? Function()? getData,
   }) {
-    return getData?.call(id);
+    return getData?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int id)? getData,
+    TResult Function()? getData,
     required TResult orElse(),
   }) {
     if (getData != null) {
-      return getData(id);
+      return getData();
     }
     return orElse();
   }
@@ -209,14 +160,7 @@ class _$MockEventGetDataImpl implements MockEventGetData {
 }
 
 abstract class MockEventGetData implements MockEvent {
-  factory MockEventGetData(final int id) = _$MockEventGetDataImpl;
-
-  @override
-  int get id;
-  @override
-  @JsonKey(ignore: true)
-  _$$MockEventGetDataImplCopyWith<_$MockEventGetDataImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  factory MockEventGetData() = _$MockEventGetDataImpl;
 }
 
 /// @nodoc
@@ -225,21 +169,21 @@ mixin _$MockState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<UserModel> users) data,
+    required TResult Function() data,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<UserModel> users)? data,
+    TResult? Function()? data,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<UserModel> users)? data,
+    TResult Function()? data,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -324,7 +268,7 @@ class _$MockStateInitialImpl implements _MockStateInitial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<UserModel> users) data,
+    required TResult Function() data,
   }) {
     return initial();
   }
@@ -334,7 +278,7 @@ class _$MockStateInitialImpl implements _MockStateInitial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<UserModel> users)? data,
+    TResult? Function()? data,
   }) {
     return initial?.call();
   }
@@ -344,7 +288,7 @@ class _$MockStateInitialImpl implements _MockStateInitial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<UserModel> users)? data,
+    TResult Function()? data,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -432,7 +376,7 @@ class _$MockStateLoadingImpl implements _MockStateLoading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<UserModel> users) data,
+    required TResult Function() data,
   }) {
     return loading();
   }
@@ -442,7 +386,7 @@ class _$MockStateLoadingImpl implements _MockStateLoading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<UserModel> users)? data,
+    TResult? Function()? data,
   }) {
     return loading?.call();
   }
@@ -452,7 +396,7 @@ class _$MockStateLoadingImpl implements _MockStateLoading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<UserModel> users)? data,
+    TResult Function()? data,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -505,8 +449,6 @@ abstract class _$$MockStateDataImplCopyWith<$Res> {
   factory _$$MockStateDataImplCopyWith(
           _$MockStateDataImpl value, $Res Function(_$MockStateDataImpl) then) =
       __$$MockStateDataImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({List<UserModel> users});
 }
 
 /// @nodoc
@@ -516,65 +458,35 @@ class __$$MockStateDataImplCopyWithImpl<$Res>
   __$$MockStateDataImplCopyWithImpl(
       _$MockStateDataImpl _value, $Res Function(_$MockStateDataImpl) _then)
       : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? users = null,
-  }) {
-    return _then(_$MockStateDataImpl(
-      null == users
-          ? _value._users
-          : users // ignore: cast_nullable_to_non_nullable
-              as List<UserModel>,
-    ));
-  }
 }
 
 /// @nodoc
 
 class _$MockStateDataImpl implements _MockStateData {
-  const _$MockStateDataImpl(final List<UserModel> users) : _users = users;
-
-  final List<UserModel> _users;
-  @override
-  List<UserModel> get users {
-    if (_users is EqualUnmodifiableListView) return _users;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_users);
-  }
+  const _$MockStateDataImpl();
 
   @override
   String toString() {
-    return 'MockState.data(users: $users)';
+    return 'MockState.data()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$MockStateDataImpl &&
-            const DeepCollectionEquality().equals(other._users, _users));
+        (other.runtimeType == runtimeType && other is _$MockStateDataImpl);
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_users));
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$MockStateDataImplCopyWith<_$MockStateDataImpl> get copyWith =>
-      __$$MockStateDataImplCopyWithImpl<_$MockStateDataImpl>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<UserModel> users) data,
+    required TResult Function() data,
   }) {
-    return data(users);
+    return data();
   }
 
   @override
@@ -582,9 +494,9 @@ class _$MockStateDataImpl implements _MockStateData {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<UserModel> users)? data,
+    TResult? Function()? data,
   }) {
-    return data?.call(users);
+    return data?.call();
   }
 
   @override
@@ -592,11 +504,11 @@ class _$MockStateDataImpl implements _MockStateData {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<UserModel> users)? data,
+    TResult Function()? data,
     required TResult orElse(),
   }) {
     if (data != null) {
-      return data(users);
+      return data();
     }
     return orElse();
   }
@@ -637,11 +549,5 @@ class _$MockStateDataImpl implements _MockStateData {
 }
 
 abstract class _MockStateData implements MockState {
-  const factory _MockStateData(final List<UserModel> users) =
-      _$MockStateDataImpl;
-
-  List<UserModel> get users;
-  @JsonKey(ignore: true)
-  _$$MockStateDataImplCopyWith<_$MockStateDataImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  const factory _MockStateData() = _$MockStateDataImpl;
 }

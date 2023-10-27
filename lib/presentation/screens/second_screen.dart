@@ -20,7 +20,7 @@ class SecondScreen extends StatelessWidget {
             const RenovationTravel(text: "Funciona bien el evento y el listener, me lleva a la 4ta página"),
             const Text(
               """ 
- En el boton de arriba, se agrega el evento y el listener. Lo que lleva al correcto funcionamiento, llevandome a la 4ta pantalla. 
+ En el boton de arriba, se agrega el evento y el listener. Lo que lleva al correcto funcionamiento, llevandome a la 4ta pantalla, sin que esté duplicada. 
  En cambio el boton de abajo hago la navegacion mediante un push a la tercera pantalla donde vuelvo a usar el mismo componente pero no funciona el listener como corresponde.           
             """,
               style: TextStyle(fontSize: 16),
