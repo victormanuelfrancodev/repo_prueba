@@ -21,7 +21,7 @@ class ThirdScreen extends StatelessWidget {
             ),
             Text(
               """ Funciona mal el boton que agrega el evento y posteriormente el listener responde al estado. En este caso duplca la 4ta pantalla y no deberia hacerlo.
-Cuando se navega a la 4ta pantalla desde este boton, se agrega un listener que responde al estado y se duplica la pantalla, lo cual se verifica haciendo un back.
+              Se puede verificar pantalla duplicada haciendo un back desde el appBar.
  """,
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 16),
