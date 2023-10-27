@@ -12,32 +12,14 @@ class CustomBottom extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocListener<MockBloc, MockState>(
-      listener: (context, state) {
-        state.when(
-            initial: () {},
-            loading: () {
-              showDialog(
-                context: context,
-                builder: (context) => const Center(
-                  child: CircularProgressIndicator(),
-                ),
-              );
-            },
-            data: (_) {
-              context.pop();
-              context.pushNamed("four");
-            });
-      },
-      child: ElevatedButton(
-        style: ButtonStyle(
-          backgroundColor: MaterialStateProperty.all(Colors.red),
-        ),
-        onPressed: () {
-          context.read<MockBloc>().add(MockEvent.getData(id));
-        },
-        child: Text(text),
+    return ElevatedButton(
+      style: ButtonStyle(
+        backgroundColor: MaterialStateProperty.all(Colors.red),
       ),
+      onPressed: () {
+        context.read<MockBloc>().add(MockEvent.getData(id));
+      },
+      child: Text(text),
     );
   }
 }
